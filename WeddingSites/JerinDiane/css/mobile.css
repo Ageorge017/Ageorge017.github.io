@@ -1,0 +1,26 @@
+@media only screen and (max-device-width: 480px) {
+    .show-mobile {
+      display: block;
+    }
+    .hide-mobile {
+      display: none;
+    }
+  }
+
+@media only screen and (min-device-width: 481px) {
+    .show-mobile {
+      display: none;
+    }
+    
+    .hide-mobile {
+      display: block;
+    }
+  }
+
+#mobileh2{
+  font:italic 400 22px/30px Playfair Display, Arial;
+}
+
+#mobileh2titles{
+  font:normal 400 41px/41px marsha, Arial;
+}
