@@ -1,0 +1,55 @@
+:root {
+  --primary-color: #00405a;
+  --secondary-color: #fffff9;
+  --accent-color-1: #4fbfaf;
+  --accent-color-2: #f35d42;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.main-content {
+}
+
+.title {
+  color: var(--secondary-color);
+  font-family: "Taviraj", serif;
+}
+
+.list-container {
+}
+.preview-container {
+  background-color: blue;
+}
+.column {
+  flex: 50%;
+}
+.row {
+  display: flex;
+}
+
+.list-item {
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+.list-item a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-family: "Scope One", serif;
+}
+
+.list-item a:hover {
+  color: var(--accent-color-2);
+}
+
+.list-item a:active {
+  color: var(--accent-color-1);
+}
+.list-item a[target="_blank"]::after {
+  content: "\29C9";
+  margin: 0 1px 0 5px;
+  color: var(--accent-color-2);
+  height: 15px;
+}
