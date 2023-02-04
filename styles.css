@@ -10,6 +10,7 @@ body {
 }
 
 .main-content {
+  padding: 0 50px;
 }
 
 .title {
@@ -19,9 +20,7 @@ body {
 
 .list-container {
 }
-.preview-container {
-  background-color: blue;
-}
+
 .column {
   flex: 50%;
 }
@@ -52,4 +51,15 @@ body {
   margin: 0 1px 0 5px;
   color: var(--accent-color-2);
   height: 15px;
+}
+
+.preview-image {
+  width: 100%;
+  border-radius: 20px;
+}
+
+@media (max-width: 1200px) {
+  .row {
+    display: block;
+  }
 }
