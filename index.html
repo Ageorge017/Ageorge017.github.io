@@ -1,68 +1,467 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
+    <title>Albert George | Web Developer & Designer</title>
+    <meta
+      name="description"
+      content="I design and build beautiful, custom websites for weddings, individuals, and small businesses. Let's bring your vision to life."
+    />
 
-    <!-- GOOGLE FONTS -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Scope+One&family=Taviraj:ital,wght@1,200&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
-    <!-- GOOGLE FONTS END -->
 
-    <title>Project Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="main-content">
-      <h1 class="title">My Projects</h1>
-      <div class="row">
-        <div class="list-container column">
-          <ul class="project-list">
-            <li class="project-list list-item">
-              <a
-                href="/WeddingSites/JerinDiane/index.html"
-                target="_blank"
-                class="site-link"
-                data-img="/assets/jerinDianeSite.png"
-                >Jerin and Diane's website
-              </a>
-            </li>
-            <li class="project-list list-item">
-              <a
-                href="/WeddingSites/NinaAnish/index.html"
-                target="_blank"
-                class="site-link"
-                data-img="/assets/anishNinaSite.png"
-                >Nina and Anish's website</a
-              >
-            </li>
-            <li class="project-list list-item">
-              <a
-                href="/WeddingSites/JeshwinAiswaria/index.html"
-                target="_blank"
-                class="site-link"
-                data-img="/assets/jeshwinAisSite.png"
-                >Jeshwin and Aiswaria's website</a
-              >
-            </li>
-            <li class="project-list list-item">
-              <a href="#" class="site-link" data-img="/assets/jinilCarolin.png"
-                >Carolin and Jinil's website</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="preview-container column">
-          <img class="preview-image" />
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">AG<span class="accent">.</span></a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#work" class="nav__link">Work</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#process" class="nav__link">Process</a></li>
+          <li>
+            <a href="#contact" class="nav__link nav__link--cta">Let's Talk</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero" id="hero">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__content">
+        <p class="hero__greeting reveal">Hi, I'm</p>
+        <h1 class="hero__name reveal reveal--delay-1">
+          Albert George<span class="accent">.</span>
+        </h1>
+        <p class="hero__tagline reveal reveal--delay-2">
+          I design &amp; build websites that<br /><span
+            class="hero__rotating-text"
+            id="rotatingText"
+          ></span
+          ><span class="hero__cursor">|</span>
+        </p>
+        <div class="hero__cta reveal reveal--delay-3">
+          <a href="#work" class="btn btn--primary">See My Work</a>
+          <a href="#contact" class="btn btn--outline">Get In Touch</a>
         </div>
       </div>
-    </div>
+      <div class="hero__scroll-indicator">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </header>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__number">01</span>
+          <h2 class="section__title">About Me</h2>
+          <div class="section__line"></div>
+        </div>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p class="about__lead">
+              I'm a web developer who believes every brand, couple, and small
+              business deserves a digital presence that feels
+              <em>uniquely theirs</em>.
+            </p>
+            <p>
+              I specialize in crafting custom, handcoded websites — no
+              cookie-cutter templates. From elegant wedding invitations with
+              RSVP systems and photo galleries, to sleek business landing pages,
+              I obsess over the details so your site stands out.
+            </p>
+            <p>
+              Every project I take on is built from scratch with clean code,
+              smooth animations, and mobile-first design. I care about
+              performance, accessibility, and creating experiences that leave an
+              impression.
+            </p>
+          </div>
+          <div class="about__skills reveal reveal--delay-1">
+            <h3 class="about__skills-title">Tech I Work With</h3>
+            <div class="skills-grid">
+              <div class="skill-tag">HTML5</div>
+              <div class="skill-tag">CSS3</div>
+              <div class="skill-tag">JavaScript</div>
+              <div class="skill-tag">TypeScript</div>
+              <div class="skill-tag">Responsive Design</div>
+              <div class="skill-tag">jQuery</div>
+              <div class="skill-tag">Git & GitHub</div>
+              <div class="skill-tag">Animation</div>
+              <div class="skill-tag">UI/UX Design</div>
+              <div class="skill-tag">Performance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORK / PORTFOLIO ===== -->
+    <section class="section work" id="work">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__number">02</span>
+          <h2 class="section__title">Featured Work</h2>
+          <div class="section__line"></div>
+        </div>
+        <p class="work__intro reveal">
+          Each project is a fully custom website — hand-coded with unique
+          designs, interactive features, and attention to every detail.
+        </p>
+
+        <div class="work__grid">
+          <!-- Project 1 -->
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__image-wrap">
+              <img
+                src="assets/anishNinaSite.png"
+                alt="Nina and Anish's Wedding Website"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <a
+                  href="WeddingSites/NinaAnish/index.html"
+                  target="_blank"
+                  class="project-card__btn"
+                  >View Site &rarr;</a
+                >
+              </div>
+            </div>
+            <div class="project-card__info">
+              <h3 class="project-card__title">Nina & Anish</h3>
+              <p class="project-card__desc">
+                A rich, immersive wedding experience featuring an animated
+                intro, interactive RSVP with guest search, multi-page photo
+                gallery, background music, and detailed event information — all
+                custom-built.
+              </p>
+              <div class="project-card__tags">
+                <span>Custom Design</span>
+                <span>RSVP System</span>
+                <span>Photo Gallery</span>
+                <span>Animations</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__image-wrap">
+              <img
+                src="assets/jerinDianeSite.png"
+                alt="Jerin and Diane's Wedding Website"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <a
+                  href="WeddingSites/JerinDiane/index.html"
+                  target="_blank"
+                  class="project-card__btn"
+                  >View Site &rarr;</a
+                >
+              </div>
+            </div>
+            <div class="project-card__info">
+              <h3 class="project-card__title">Jerin & Diane</h3>
+              <p class="project-card__desc">
+                An elegant wedding site with a full photo album section, RSVP
+                functionality, Instagram-story-style interactions, embedded
+                maps, and smooth scroll navigation throughout.
+              </p>
+              <div class="project-card__tags">
+                <span>Photo Albums</span>
+                <span>RSVP</span>
+                <span>Instagram Stories</span>
+                <span>Maps</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__image-wrap">
+              <img
+                src="assets/jeshwinAisSite.png"
+                alt="Jeshwin and Aiswaria's Wedding Website"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <a
+                  href="WeddingSites/JeshwinAiswaria/index.html"
+                  target="_blank"
+                  class="project-card__btn"
+                  >View Site &rarr;</a
+                >
+              </div>
+            </div>
+            <div class="project-card__info">
+              <h3 class="project-card__title">Jeshwin & Aiswaria</h3>
+              <p class="project-card__desc">
+                A polished wedding website with a cinematic cover page reveal,
+                guest search RSVP, invitation system, custom typography, and a
+                clean, elegant aesthetic throughout.
+              </p>
+              <div class="project-card__tags">
+                <span>Cover Animation</span>
+                <span>Guest Search</span>
+                <span>Custom Fonts</span>
+                <span>Invitation</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__image-wrap">
+              <img
+                src="assets/jinilCarolin.png"
+                alt="Carolin and Jinil's Wedding Website"
+                class="project-card__image"
+                loading="lazy"
+              />
+              <div class="project-card__overlay">
+                <span class="project-card__btn project-card__btn--coming"
+                  >Coming Soon</span
+                >
+              </div>
+            </div>
+            <div class="project-card__info">
+              <h3 class="project-card__title">Carolin & Jinil</h3>
+              <p class="project-card__desc">
+                Currently in development — another bespoke wedding experience
+                with fresh design concepts and interactive features tailored to
+                the couple's story.
+              </p>
+              <div class="project-card__tags">
+                <span>In Progress</span>
+                <span>Custom Design</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__number">03</span>
+          <h2 class="section__title">What I Can Build For You</h2>
+          <div class="section__line"></div>
+        </div>
+        <div class="services__grid">
+          <div class="service-card reveal">
+            <div class="service-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Wedding Websites</h3>
+            <p class="service-card__desc">
+              Beautiful, one-of-a-kind wedding sites with RSVP systems, photo
+              galleries, event details, music, countdowns, and more. Give your
+              guests an unforgettable digital experience.
+            </p>
+          </div>
+          <div class="service-card reveal reveal--delay-1">
+            <div class="service-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Business Websites</h3>
+            <p class="service-card__desc">
+              Clean, professional websites for small businesses and startups.
+              From single-page landing sites to multi-page experiences —
+              designed to convert visitors into customers.
+            </p>
+          </div>
+          <div class="service-card reveal reveal--delay-2">
+            <div class="service-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Personal Brands</h3>
+            <p class="service-card__desc">
+              Portfolio sites, personal blogs, and brand pages that capture who
+              you are. Stand out online with a site that's as unique as your
+              story.
+            </p>
+          </div>
+          <div class="service-card reveal reveal--delay-3">
+            <div class="service-card__icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+                <line x1="14" y1="4" x2="10" y2="20"></line>
+              </svg>
+            </div>
+            <h3 class="service-card__title">Custom Development</h3>
+            <p class="service-card__desc">
+              Need something specific? Interactive features, animations,
+              data-driven components, or a complete redesign of your existing
+              site — I'll build exactly what you need.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__number">04</span>
+          <h2 class="section__title">How I Work</h2>
+          <div class="section__line"></div>
+        </div>
+        <div class="process__timeline">
+          <div class="process__step reveal">
+            <div class="process__step-number">01</div>
+            <div class="process__step-content">
+              <h3>Discovery</h3>
+              <p>
+                We start with a conversation. I learn about your vision, your
+                audience, and what you want your site to achieve. No jargon —
+                just a real conversation.
+              </p>
+            </div>
+          </div>
+          <div class="process__step reveal">
+            <div class="process__step-number">02</div>
+            <div class="process__step-content">
+              <h3>Design</h3>
+              <p>
+                I create a design concept tailored to your brand. You'll see
+                mockups and provide feedback until we land on something you
+                love.
+              </p>
+            </div>
+          </div>
+          <div class="process__step reveal">
+            <div class="process__step-number">03</div>
+            <div class="process__step-content">
+              <h3>Build</h3>
+              <p>
+                I hand-code your site with clean, performant code. Every
+                animation, layout, and interaction is crafted with care — no
+                bloated page builders.
+              </p>
+            </div>
+          </div>
+          <div class="process__step reveal">
+            <div class="process__step-number">04</div>
+            <div class="process__step-content">
+              <h3>Launch</h3>
+              <p>
+                After thorough testing across devices and browsers, your site
+                goes live. I'll make sure everything runs smoothly and help with
+                hosting setup.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact__content reveal">
+          <span class="section__number">05</span>
+          <h2 class="contact__title">
+            Let's Build Something Together<span class="accent">.</span>
+          </h2>
+          <p class="contact__desc">
+            Have a project in mind? Whether it's a wedding, a business launch,
+            or a personal brand — I'd love to hear about it.
+          </p>
+          <a
+            href="mailto:albertgeorge017@gmail.com"
+            class="btn btn--primary btn--large"
+            >Get In Touch &rarr;</a
+          >
+          <div class="contact__links">
+            <a
+              href="https://github.com/Ageorge017"
+              target="_blank"
+              class="contact__social"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Albert George. Handcrafted with care.</p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
   </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="/index.js"></script>
 </html>
