@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!isDeleting && charIndex === current.length) {
-      typeSpeed = 2000; // pause at end
+      typeSpeed = 2000;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % phrases.length;
-      typeSpeed = 400; // pause before next word
+      typeSpeed = 400;
     }
 
     setTimeout(type, typeSpeed);
@@ -61,18 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ---------- NAVBAR SCROLL EFFECT ----------
   const nav = document.getElementById("nav");
-  let lastScroll = 0;
 
   window.addEventListener(
     "scroll",
     () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 50) {
+      if (window.scrollY > 50) {
         nav.classList.add("scrolled");
       } else {
         nav.classList.remove("scrolled");
       }
-      lastScroll = scrollY;
     },
     { passive: true },
   );
@@ -89,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
   });
 
-  // Close menu on link click
   navLinks.querySelectorAll(".nav__link").forEach((link) => {
     link.addEventListener("click", () => {
       navToggle.classList.remove("active");
@@ -155,4 +151,42 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = "";
     });
   });
+
+  // ---------- CONTACT FORM SUBMISSION ----------
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector(".form__submit");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.textContent = "";
+      formStatus.className = "form__status";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: new FormData(contactForm),
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          formStatus.textContent = "Message sent! I'll get back to you soon.";
+          formStatus.classList.add("form__status--success");
+          contactForm.reset();
+        } else {
+          formStatus.textContent = "Something went wrong. Please try again.";
+          formStatus.classList.add("form__status--error");
+        }
+      } catch {
+        formStatus.textContent = "Something went wrong. Please try again.";
+        formStatus.classList.add("form__status--error");
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send Message →";
+    });
+  }
 });

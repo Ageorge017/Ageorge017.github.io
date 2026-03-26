@@ -733,6 +733,103 @@ ul {
   margin-bottom: 36px;
 }
 
+/* --- Contact Form --- */
+.contact__form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form__label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form__required {
+  color: var(--accent-2);
+}
+
+.form__optional {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.form__input {
+  padding: 14px 16px;
+  background: var(--bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  transition: var(--transition);
+  outline: none;
+}
+
+.form__input::placeholder {
+  color: rgba(138, 138, 154, 0.5);
+}
+
+.form__input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form__submit {
+  align-self: center;
+  margin-top: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.form__status {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 8px;
+  min-height: 1.4em;
+}
+
+.form__status--success {
+  color: #4ade80;
+}
+
+.form__status--error {
+  color: var(--accent-2);
+}
+
+.form__privacy {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.form__privacy-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form__privacy-link:hover {
+  color: var(--text);
+}
+
 .contact__links {
   margin-top: 36px;
   display: flex;
@@ -770,6 +867,42 @@ ul {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
   font-size: 0.85rem;
+}
+
+.footer__link {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer__link:hover {
+  color: var(--accent);
+}
+
+/* ============================================================
+   PRIVACY PAGE
+   ============================================================ */
+.privacy__content h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 32px 0 12px;
+}
+
+.privacy__content p,
+.privacy__content li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.privacy__content ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.privacy__content li {
+  list-style: disc;
+  margin-bottom: 6px;
 }
 
 /* ============================================================
