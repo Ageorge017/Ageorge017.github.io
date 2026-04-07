@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236c63ff'/><text x='50%25' y='58%25' text-anchor='middle' font-size='20' fill='white'>A</text></svg>" />
 
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -77,9 +78,32 @@
           <h2>Your Rights</h2>
           <p>
             You can request that I delete any information you've sent me at any
-            time by sending a follow up inquiry using the same information, and
-            mention the request in the message.
+            time. Enter your email below and I'll remove it promptly.
           </p>
+          <form
+            class="contact__form"
+            action="https://formspree.io/f/maqlkyew"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Delete Data Request" />
+            <div class="form__group">
+              <label for="delete-email" class="form__label">
+                Email <span class="form__required">*</span>
+              </label>
+              <input
+                type="email"
+                id="delete-email"
+                name="email"
+                class="form__input"
+                required
+                placeholder="you@example.com"
+              />
+            </div>
+            <button type="submit" class="btn btn--primary form__submit" style="margin-top: 8px">
+              Submit Request
+            </button>
+            <p class="form__status" id="deleteFormStatus"></p>
+          </form>
 
           <h2>Changes</h2>
           <p>
@@ -98,5 +122,42 @@
         </p>
       </div>
     </footer>
+
+    <script>
+      const deleteForm = document.querySelector('.privacy .contact__form');
+      const deleteStatus = document.getElementById('deleteFormStatus');
+
+      deleteForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = deleteForm.querySelector('.form__submit');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        deleteStatus.textContent = '';
+        deleteStatus.className = 'form__status';
+
+        try {
+          const response = await fetch(deleteForm.action, {
+            method: 'POST',
+            body: new FormData(deleteForm),
+            headers: { Accept: 'application/json' },
+          });
+
+          if (response.ok) {
+            deleteStatus.textContent = "Request received! I'll delete your data shortly.";
+            deleteStatus.classList.add('form__status--success');
+            deleteForm.reset();
+          } else {
+            deleteStatus.textContent = 'Something went wrong. Please try again.';
+            deleteStatus.classList.add('form__status--error');
+          }
+        } catch {
+          deleteStatus.textContent = 'Something went wrong. Please try again.';
+          deleteStatus.classList.add('form__status--error');
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+      });
+    </script>
   </body>
 </html>
